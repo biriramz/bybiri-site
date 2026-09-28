@@ -918,7 +918,7 @@ body.open .sheet{transform:translate(-50%,0);visibility:visible}
 
 <footer id="contact">
   <h2>let's shape<br>what's <span class="serif">next.</span></h2>
-  <a class="mail" id="mail" href="mailto:hello@bybiri.co">hello@bybiri.co <span>↗</span></a>
+  <a class="mail" id="mail" href="mailto:carlaoswins@gmail.com">carlaoswins@gmail.com <span>↗</span></a>
   <div class="copied" id="copied">copied to clipboard</div>
   <div class="roll" id="roll"><div class="sq" id="sq"></div></div>
 </footer>
@@ -930,7 +930,7 @@ body.open .sheet{transform:translate(-50%,0);visibility:visible}
   <a href="#work" data-s="work">work</a>
   <a href="#about" data-s="about">about</a>
   <a href="https://linkedin.com/in/carlavramirez" target="_blank">linkedin</a>
-  <a href="#contact" class="cta">say hi</a>
+  <a href="mailto:carlaoswins@gmail.com" class="cta">say hi</a>
 </nav>
 
 <div class="scrim" id="scrim"></div>
@@ -1024,7 +1024,7 @@ addEventListener('keydown',e=>{if(e.key==='Escape')closeCase()});
   document.fonts&&document.fonts.ready.then(()=>set(dock.querySelector('a.on')))})();
 
 /* email: copy on click too */
-document.getElementById('mail').addEventListener('click',()=>{try{navigator.clipboard.writeText('hello@bybiri.co');const c=document.getElementById('copied');c.style.opacity=1;setTimeout(()=>c.style.opacity=0,1600)}catch(e){}});
+document.getElementById('mail').addEventListener('click',()=>{try{navigator.clipboard.writeText('carlaoswins@gmail.com');const c=document.getElementById('copied');c.style.opacity=1;setTimeout(()=>c.style.opacity=0,1600)}catch(e){}});
 
 /* clock */
 const ck=document.getElementById('clock');const tick=()=>ck.textContent=new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/Los_Angeles'}).toLowerCase()+' pt';tick();setInterval(tick,30000);
