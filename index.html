@@ -169,7 +169,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 <script>
 const IMG={"up": "v2_up.jpg", "orgsT": "v2_orgsT.jpg", "payT": "v2_payT.jpg", "hdT": "v2_hdT.jpg", "mbT": "v2_mbT.jpg", "mb_shop": "v2_mb_shop.jpg", "mb_ai": "v2_mb_ai.jpg", "zebD": "v2_zebD.jpg", "zeb8": "v2_zeb8.jpg", "zebW": "v2_zebW.jpg", "hdD": "v2_hdD.jpg", "upV": "v2_upV.mp4", "upP": "v2_upP.jpg", "s_orgs": "v2_s_orgs.jpg", "s_lists": "v2_s_lists.jpg", "s_acct": "v2_s_acct.jpg", "s_jobs": "v2_s_jobs.jpg", "zebQ": "v2_zebQ.jpg", "zebE": "v2_zebE.jpg", "hdM": "v2_hdM.jpg", "hdF": "v2_hdF.jpg", "sbV": "v2_sbV.mp4", "sbP": "v2_sbP.jpg"};
 const C=[
- {id:"sumble",co:"sumble",dom:"core product",yr:"2026 – present",cover:"orgsT",cls:"full",
+ {id:"sumble",co:"sumble",dom:"ai account intelligence",yr:"2026 – present",cover:"orgsT",cls:"full",
   role:"founding product designer",focus:"product direction, research, information architecture, visual design, motion, front-end",tools:"figma, react, claude",
   nums:[["1:1","figma → production react"],["2×","faster time to first insight"],["+38%","account lists created"]],
   p:"when i joined sumble as its founding designer, organizations, people and job posts all lived on one page behind tabs, and customers kept telling us on calls that they couldn't get their own account lists in. i took those as the two things to fix first. i redesigned the product around dedicated pages, and rebuilt import after interviewing dozens of salespeople and revops teams. underneath both, i built the design system from scratch, with figma components mapped 1:1 to production react, so engineers build every new surface from the same parts. i work directly with the founders, engineering, data and customer success, own all product motion, and ship front-end code myself when that's faster.",
@@ -186,12 +186,12 @@ const C=[
     shots:[["sbV","video","signals empty state, with the sidebar collapsing","sbP"]]},
    {id:"upload",title:"upload flow",pm:["+38%","account lists created",0],blurb:"import used to be csv-only and buried in settings. now you can paste names or drop in any csv, then map your columns with a live preview of your own rows underneath. before anything is saved, you review every matched account, fix or remove the wrong ones, and search to add any that are missing. the whole flow moved out of settings and into onboarding.",
     shots:[["upV","video","the upload flow, start to finish","upP"]]}]},
- {id:"zebra",co:"the zebra",dom:"price tracking",yr:"2025",cover:"zeb8",cls:"full",
+ {id:"zebra",co:"the zebra",dom:"insurance comparison",yr:"2025",cover:"zeb8",cls:"full",
   role:"senior product designer",focus:"product direction, research, user journeys, data visualization, motion, marketing",
   nums:[["77%","used it"],["60%","went on to a quote"]],
   p:"i led the design of a mobile-first rate tracker at the zebra, working on a team of 2–3 designers. the zebra makes money on quotes, so the goal was engagement that leads back to one instead of competing with it. i talked to customers about what they valued between quotes, then made the rate graph the centerpiece. 77% of people used it and 60% went on to a quote. i also helped with marketing assets along the way.",
   shots:[["zebD","ui fit","the rate tracker on desktop"],["zebQ","full","quote card, before and after",null,"the old quote card led with a $90 teaser, then listed $190 a month further down, behind a button that said get final price. the new card leads with the zebra's estimated final rate and shows the carrier's estimate next to it, so the two numbers are explained and not discovered. boxed tabs became plain text tabs, the add-on list moved out of the summary, and the button says what happens next.",["−20%","drop-off after clicking through to a carrier",0]],["zebW","ui fit","sign up",null,"the sign-up page asks for one thing, an email, and says what you get for it. the left side makes the case in three short points, and returning visitors get a link to pick up where they left off.",["+15%","accounts created from this page",0]],["zebE","full","offer emails, four layouts",null,"four layouts for the email that brings people back to their offers. each leads with a different thing: an illustration, the lowest price itself, a comparison graphic, or a photo. all four share the same offer cards and a one-tap helpful or not at the bottom, so they could be tested against each other.",["+12%","click-through to offers",0]]]},
- {id:"marble",co:"marble",dom:"payments",yr:"2023 – 2024",cover:"mbT",cls:"full",
+ {id:"marble",co:"marble",dom:"insurance management",yr:"2023 – 2024",cover:"mbT",cls:"full",
   role:"product designer, first design hire",focus:"design system, user journeys, customer and agent interviews, visual design, brand, compliance",
   nums:[["90%+","payment adoption"],["½","agent handling time"],["~50%","of new work shipped with no designer"],["$20m","acquisition by the zebra"]],
   p:"i was marble's first full-time designer, so the design system had to make decisions without me. in two months i audited hundreds of legacy components down to a few dozen that engineers could build a page from without waiting on design. about half of all new work went on to ship that way. then i took on payments: members were giving card numbers to an agent by email or phone, so i talked to customers and to marble's agent, mapped the journey, and designed the self-serve portal that replaced it. adoption passed 90% and agent handling time was cut in half. marble was later acquired by the zebra for $20m.",
@@ -202,19 +202,19 @@ const C=[
     shots:[["mb_shop","ui fit","shopping for auto insurance, with offers compared against the current policy"]]},
    {id:"marble-ai",title:"marble ai",pm:["35%","of questions answered without an agent",0],blurb:"a chat assistant for insurance questions, with past chats on the left, suggested prompts to start from, and a clear note that licensed people give the specific advice.",
     shots:[["mb_ai","ui fit","marble ai, a new chat"]]}]},
- {id:"honeydew",co:"honeydew",dom:"checkout",yr:"2025",cover:"hdT",cls:"full",
+ {id:"honeydew",co:"honeydew",dom:"online dermatology",yr:"2025",cover:"hdT",cls:"full",
   role:"freelance designer",focus:"marketing, user flows, visual design, responsive web, a/b testing",
   nums:[["+22%","conversion rate"],["−16%","acquisition cost"]],
   p:"a freelance engagement with honeydew, an online acne care provider, working directly with the founder on the two places the business makes or loses a patient. first, the paid-ad landing page, where compliance language and scannability pull against each other: i rebuilt the hierarchy above the fold and moved trust signals to the points where people dropped off, without softening a clinical claim. it won its a/b test with 22% higher conversion and 16% lower acquisition cost. then checkout: a new four-step order flow that handles two pharmacy paths, prescriptions people choose to skip, and doctor-recommended products in one sequence.",
   shots:[["hdM","full","mobile fold, old and re-imagined",null,"the old fold stacked a stock product shot, two competing headlines, an italic paragraph and a checklist before the button. the new one opens on real packaging, turns the headline claims into two tags, and compresses the benefits into scannable chips, so price and insurance are answered before the button and the clinical disclaimer stays intact.",["+22%","conversion rate, a/b tested",0]],["hdD","ui fit","the new fold on desktop",null,"the same hierarchy on desktop: product photo on the left, and on the right the tags, one sentence, four trust chips and a single button, with the why low-dose accutane link directly under it for people who aren't ready yet.",["−16%","acquisition cost",0]],["hdF","full","the checkout flow, both pharmacy paths",null,"a new four-step checkout i designed directly with honeydew's founder. it starts with which prescriptions you want filled and asks why if you skip one, since skipping can affect results. then it splits on pharmacy: the partner pharmacy path ships everything and takes payment once, while the other-pharmacy path keeps prescriptions as pay-at-pickup and only charges for the supporting products. doctor-recommended products are pre-selected with quantities, and the confirmation separates what the pharmacy ships from what honeydew ships.",["+30%","orders that include a recommended product",0]]]}
 ];
 const T=[
- {id:"sumble",co:"sumble",dom:"core product",m:"",cover:"orgsT",cls:"full"},
- {id:"sumble.upload",co:"sumble",dom:"upload flow",m:"",video:"upV",poster:"upP",dur:21.2,t0:5,ar:"2822 / 1634",old:"upload"},
- {id:"zebra",co:"the zebra",dom:"price tracking",m:"",cover:"zeb8",cls:"full"},
- {id:"marble",co:"marble",dom:"payments",m:"acquired by the zebra",cover:"mbT",cls:"full"},
- {id:"sumble.signals",co:"sumble",dom:"signals",m:"",video:"sbV",poster:"sbP",dur:8.0,t0:1,ar:"2988 / 1634"},
- {id:"honeydew",co:"honeydew",dom:"checkout",m:"",cover:"hdT",cls:"full"}
+ {id:"sumble",co:"sumble",dom:"ai account intelligence",m:"",cover:"orgsT",cls:"full"},
+ {id:"sumble.upload",co:"upload flow",dom:"sumble",m:"",video:"upV",poster:"upP",dur:21.2,t0:5,ar:"2822 / 1634",old:"upload"},
+ {id:"zebra",co:"the zebra",dom:"insurance comparison",m:"",cover:"zeb8",cls:"full"},
+ {id:"marble",co:"marble",dom:"insurance management",m:"acquired by the zebra",cover:"mbT",cls:"full"},
+ {id:"sumble.signals",co:"signals",dom:"sumble",m:"",video:"sbV",poster:"sbP",dur:8.0,t0:1,ar:"2988 / 1634"},
+ {id:"honeydew",co:"honeydew",dom:"online dermatology",m:"",cover:"hdT",cls:"full"}
 ];
 const col=document.getElementById('col');
 const plate=(k,cls,alt)=>`<div class="plate ${cls==='full'?'':cls}"><img src="${IMG[k]}" alt="${alt}"></div>`;
