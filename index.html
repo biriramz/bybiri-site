@@ -126,7 +126,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .pm{display:block;margin-top:10px;color:var(--ink)}
 .pm b{font-weight:500}
 .pm em{font:400 10px var(--mono);letter-spacing:.07em;text-transform:uppercase;font-style:normal;color:var(--mute);border:1px dashed var(--mute);border-radius:5px;padding:1px 6px;margin-left:8px}
-.ba{position:relative;aspect-ratio:2400/1490;cursor:ew-resize;user-select:none;touch-action:pan-y}.ba img{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}.ba .top{clip-path:inset(0 0 0 var(--p))}.ba .bab{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:var(--ink)}.ba .bak{position:absolute;top:50%;left:var(--p);width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--edge),0 1px 4px rgba(0,0,0,.12)}.ba .bal{position:absolute;top:12px;background:rgba(255,255,255,.92);border-radius:5px;padding:3px 7px;box-shadow:0 0 0 1px var(--edge)}.ba .l{left:12px}.ba .r{right:12px}
+.ba{position:relative;cursor:ew-resize;user-select:none;touch-action:pan-y}.ba img{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}.ba img:first-child{position:relative;height:auto}.ba .top{clip-path:inset(0 0 0 var(--p))}.ba .bab{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:var(--ink)}.ba .bak{position:absolute;top:50%;left:var(--p);width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--edge),0 1px 4px rgba(0,0,0,.12)}.ba .bal{position:absolute;top:12px;background:rgba(255,255,255,.92);border-radius:5px;padding:3px 7px;box-shadow:0 0 0 1px var(--edge)}.ba .l{left:12px}.ba .r{right:12px}
 .shots .blurb{padding-top:14px;color:var(--mute);text-wrap:pretty}
 .sech .ph{grid-column:span 2;justify-self:end;align-self:start;border:1px dashed var(--mute);border-radius:6px;padding:3px 8px}
 .secnav{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:14px}
@@ -168,7 +168,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 <div class="take" id="take" aria-hidden="true"></div>
 
 <script>
-const IMG={"admOld": "v2_admOld.jpg", "admNew": "v2_admNew.jpg", "admV": "v2_admV.mp4", "admP": "v2_admP.jpg", "crV": "v2_crV.mp4", "crP": "v2_crP.jpg", "up": "v2_up.jpg", "orgsT": "v2_orgsT.jpg", "payT": "v2_payT.jpg", "hdT": "v2_hdT.jpg", "mbT": "v2_mbT.jpg", "mb_shop": "v2_mb_shop.jpg", "mb_ai": "v2_mb_ai.jpg", "zebD": "v2_zebD.jpg", "zeb8": "v2_zeb8.jpg", "zebW": "v2_zebW.jpg", "hdD": "v2_hdD.jpg", "upV": "v2_upV.mp4", "upP": "v2_upP.jpg", "s_orgs": "v2_s_orgs.jpg", "s_lists": "v2_s_lists.jpg", "s_acct": "v2_s_acct.jpg", "s_jobs": "v2_s_jobs.jpg", "zebQ": "v2_zebQ.jpg", "zebE": "v2_zebE.jpg", "hdM": "v2_hdM.jpg", "hdF": "v2_hdF.jpg", "sbV": "v2_sbV.mp4", "sbP": "v2_sbP.jpg"};
+const IMG={"evB1": "v2_evB1.jpg", "evA1": "v2_evA1.jpg", "evB2": "v2_evB2.jpg", "evA2": "v2_evA2.jpg", "admOld": "v2_admOld.jpg", "admNew": "v2_admNew.jpg", "admV": "v2_admV.mp4", "admP": "v2_admP.jpg", "crV": "v2_crV.mp4", "crP": "v2_crP.jpg", "up": "v2_up.jpg", "orgsT": "v2_orgsT.jpg", "payT": "v2_payT.jpg", "hdT": "v2_hdT.jpg", "mbT": "v2_mbT.jpg", "mb_shop": "v2_mb_shop.jpg", "mb_ai": "v2_mb_ai.jpg", "zebD": "v2_zebD.jpg", "zeb8": "v2_zeb8.jpg", "zebW": "v2_zebW.jpg", "hdD": "v2_hdD.jpg", "upV": "v2_upV.mp4", "upP": "v2_upP.jpg", "s_orgs": "v2_s_orgs.jpg", "s_lists": "v2_s_lists.jpg", "s_acct": "v2_s_acct.jpg", "s_jobs": "v2_s_jobs.jpg", "zebQ": "v2_zebQ.jpg", "zebE": "v2_zebE.jpg", "hdM": "v2_hdM.jpg", "hdF": "v2_hdF.jpg", "sbV": "v2_sbV.mp4", "sbP": "v2_sbP.jpg"};
 const C=[
  {id:"sumble",co:"sumble",dom:"ai account intelligence",yr:"2026 – present",cover:"orgsT",cls:"full",
   role:"founding product designer",focus:"product direction, research, information architecture, visual design, motion, front-end",tools:"figma, react, claude",
@@ -185,6 +185,8 @@ const C=[
     shots:[["crV","video","settings, billing and export history, then buying credits","crP"]]},
    {id:"admin",title:"admin",pm:["−42%","seat and access requests to support",0],blurb:"admin used to be three config tabs that showed how sumble was set up, but nothing about the team using it. i ran intensive research and user testing with admins across customer teams, and the same questions kept coming up: who has access, where are our credits going, what\u2019s connected, and is anyone actually using this. the new admin answers all of that on one dashboard, with dedicated tabs for users and credit caps, activity, configurations and integrations, so an admin can manage the whole account without filing a support ticket.",
     shots:[["admOld","slider","before and after, drag to compare","admNew"],["admV","video","dashboard, users and credit caps, activity, configurations and integrations","admP"]]},
+   {id:"events",title:"events",pm:["2.4×","events added to account lists per week",0],blurb:"events started as a sales feature, but the people living in it turned out to be marketers deciding which conferences to sponsor, attend and work the floor at. so i went back to research with a new audience: field, event and demand gen marketers. they didn\u2019t think in speakers, they thought in shortlists: which events their target accounts show up to, how many of them, and who exactly. the old page buried that in one long card per event and sent every click to a separate page. now it\u2019s a sortable table ranked against your ICP with attendees inline, and opening an event slides in a side sheet listing every attendee by organization, role and rank, ready to bulk-add to a list without losing your place.",
+    shots:[["evB1","slider","the events list, before and after","evA1"],["evB2","slider","an event\u2019s attendees, before and after","evA2"]]},
    {id:"signals",title:"signals empty state and sidebar",pm:["+18%","upgrades started from the empty state",0],blurb:"a new account has no signals yet, so the empty state does the explaining. it says when the first ones will arrive, runs a moving row of example signals that are clearly labeled as examples, and offers the two upgrade paths. the sidebar collapses to icons to give dense pages more room. i designed it, wrote the code, and shipped it to production myself.",
     shots:[["sbV","video","signals empty state, with the sidebar collapsing","sbP"]]},
    {id:"upload",title:"upload flow",pm:["+38%","account lists created",0],blurb:"import used to be csv-only and buried in settings. now you can paste names or drop in any csv, then map your columns with a live preview of your own rows underneath. before anything is saved, you review every matched account, fix or remove the wrong ones, and search to add any that are missing. the whole flow moved out of settings and into onboarding.",
@@ -216,6 +218,7 @@ const T=[
  {id:"sumble.upload",co:"upload flow",dom:"sumble",m:"",video:"upV",poster:"upP",dur:21.2,t0:5,ar:"2822 / 1634",old:"upload"},
  {id:"zebra",co:"the zebra",dom:"insurance comparison",m:"",cover:"zeb8",cls:"full"},
  {id:"marble",co:"marble",dom:"insurance management",m:"acquired by the zebra",cover:"mbT",cls:"full"},
+ {id:"sumble.events",co:"events",dom:"sumble",m:"",cover:"evA1",cls:"full"},
  {id:"sumble.admin",co:"admin",dom:"sumble",m:"",video:"admV",poster:"admP",dur:22,t0:0,ar:"2560 / 1444"},
  {id:"sumble.signals",co:"signals",dom:"sumble",m:"",video:"sbV",poster:"sbP",dur:8.0,t0:1,ar:"2988 / 1634"},
  {id:"honeydew",co:"honeydew",dom:"online dermatology",m:"",cover:"hdT",cls:"full"}
@@ -225,7 +228,7 @@ const plate=(k,cls,alt)=>`<div class="plate ${cls==='full'?'':cls}"><img src="${
 const duo=(k,m,alt)=>`<div class="duo"><img src="${IMG[k]}" alt="${alt}, desktop"><img class="mob" src="${IMG[m]}" alt="${alt}, mobile"></div>`;
 const VS={};
 T.filter(c=>c.video||c.adj).forEach(c=>{VS[c.id]={t:c.t0||0,z:1,x:0,y:0,loop:!!c.video};try{Object.assign(VS[c.id],JSON.parse(null||'{}'))}catch(e){}});
-const LDEF={left:["sumble","sumble.signals","honeydew"],right:["sumble.admin","zebra","sumble.upload","marble"]};
+const LDEF={left:["sumble","sumble.signals","honeydew","sumble.events"],right:["sumble.admin","zebra","sumble.upload","marble"]};
 let L=JSON.parse(JSON.stringify(LDEF)), arranging=false;
 try{const o=JSON.parse(null||'null'); if(o&&o.left&&o.right&&[...o.left,...o.right].sort().join()===T.map(c=>c.id).sort().join()) L=o}catch(e){}
 const ordered=()=>{const out=[];for(let i=0;i<Math.max(L.left.length,L.right.length);i++){if(L.left[i])out.push(L.left[i]);if(L.right[i])out.push(L.right[i])}const seen=[];out.forEach(id=>{const c=C.find(c=>c.id===id.split('.')[0]);if(!seen.includes(c))seen.push(c)});return seen};
