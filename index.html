@@ -30,14 +30,14 @@ body{background:var(--bg);color:var(--ink);font:400 15px/21px var(--sans);letter
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .mono{font:400 11px/18px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:var(--mute)}
-.page{display:grid;grid-template-columns:minmax(280px,30%) minmax(0,1fr);gap:calc(var(--g)*2);padding-inline:var(--g);max-width:1800px;margin-inline:auto}
+.page{display:grid;grid-template-columns:minmax(260px,24%) minmax(0,1fr);gap:calc(var(--g)*2);padding-inline:var(--g);max-width:1800px;margin-inline:auto}
 
 .rail{position:sticky;top:env(safe-area-inset-top,0px);align-self:start;display:flex;flex-direction:column;gap:30px;padding-block:var(--g)}
 .id{display:flex;flex-direction:column;gap:1px;font-weight:500}
 .id span{color:var(--mute);font-weight:400}
 .bio{max-width:30em}
 .bio u{text-decoration:none;color:var(--mute)}
-.lists{display:grid;grid-template-columns:1fr 1fr;gap:var(--g)}
+.lists{display:grid;grid-template-columns:auto 1fr;column-gap:calc(var(--g)*2);row-gap:var(--g)}.lists li{white-space:nowrap}
 .lists .mono{margin-bottom:8px}
 .lists ul{padding:0}.lists li{list-style:none}
 .lists em{font:400 10px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--mute);margin-left:6px;white-space:nowrap}
