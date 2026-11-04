@@ -127,7 +127,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .pm b{font-weight:500}
 .pm em{font:400 10px var(--mono);letter-spacing:.07em;text-transform:uppercase;font-style:normal;color:var(--mute);border:1px dashed var(--mute);border-radius:5px;padding:1px 6px;margin-left:8px}
 .ba{position:relative;aspect-ratio:2400/1490;cursor:ew-resize;user-select:none;touch-action:pan-y}.ba img{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}.ba .top{clip-path:inset(0 0 0 var(--p))}.ba .bab{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:var(--ink)}.ba .bak{position:absolute;top:50%;left:var(--p);width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--edge),0 1px 4px rgba(0,0,0,.12)}.ba .bal{position:absolute;top:12px;background:rgba(255,255,255,.92);border-radius:5px;padding:3px 7px;box-shadow:0 0 0 1px var(--edge)}.ba .l{left:12px}.ba .r{right:12px}
-.shots .blurb{padding-top:14px;color:var(--mute);max-width:44em;text-wrap:pretty}
+.shots .blurb{padding-top:14px;color:var(--mute);text-wrap:pretty}
 .sech .ph{grid-column:span 2;justify-self:end;align-self:start;border:1px dashed var(--mute);border-radius:6px;padding:3px 8px}
 .secnav{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:14px}
 .lk2{text-decoration:underline dotted;text-decoration-color:var(--mute);text-decoration-thickness:1px;text-underline-offset:4px}
@@ -216,6 +216,7 @@ const T=[
  {id:"sumble.upload",co:"upload flow",dom:"sumble",m:"",video:"upV",poster:"upP",dur:21.2,t0:5,ar:"2822 / 1634",old:"upload"},
  {id:"zebra",co:"the zebra",dom:"insurance comparison",m:"",cover:"zeb8",cls:"full"},
  {id:"marble",co:"marble",dom:"insurance management",m:"acquired by the zebra",cover:"mbT",cls:"full"},
+ {id:"sumble.admin",co:"admin",dom:"sumble",m:"",video:"admV",poster:"admP",dur:22,t0:0,ar:"2560 / 1444"},
  {id:"sumble.signals",co:"signals",dom:"sumble",m:"",video:"sbV",poster:"sbP",dur:8.0,t0:1,ar:"2988 / 1634"},
  {id:"honeydew",co:"honeydew",dom:"online dermatology",m:"",cover:"hdT",cls:"full"}
 ];
@@ -224,7 +225,7 @@ const plate=(k,cls,alt)=>`<div class="plate ${cls==='full'?'':cls}"><img src="${
 const duo=(k,m,alt)=>`<div class="duo"><img src="${IMG[k]}" alt="${alt}, desktop"><img class="mob" src="${IMG[m]}" alt="${alt}, mobile"></div>`;
 const VS={};
 T.filter(c=>c.video||c.adj).forEach(c=>{VS[c.id]={t:c.t0||0,z:1,x:0,y:0,loop:!!c.video};try{Object.assign(VS[c.id],JSON.parse(null||'{}'))}catch(e){}});
-const LDEF={left:["sumble","zebra","sumble.signals"],right:["marble","sumble.upload","honeydew"]};
+const LDEF={left:["sumble","sumble.admin","zebra","sumble.signals"],right:["marble","sumble.upload","honeydew"]};
 let L=JSON.parse(JSON.stringify(LDEF)), arranging=false;
 try{const o=JSON.parse(null||'null'); if(o&&o.left&&o.right&&[...o.left,...o.right].sort().join()===T.map(c=>c.id).sort().join()) L=o}catch(e){}
 const ordered=()=>{const out=[];for(let i=0;i<Math.max(L.left.length,L.right.length);i++){if(L.left[i])out.push(L.left[i]);if(L.right[i])out.push(L.right[i])}const seen=[];out.forEach(id=>{const c=C.find(c=>c.id===id.split('.')[0]);if(!seen.includes(c))seen.push(c)});return seen};
