@@ -167,7 +167,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 <div class="take" id="take" aria-hidden="true"></div>
 
 <script>
-const IMG={"up": "v2_up.jpg", "orgsT": "v2_orgsT.jpg", "payT": "v2_payT.jpg", "hdT": "v2_hdT.jpg", "mbT": "v2_mbT.jpg", "mb_shop": "v2_mb_shop.jpg", "mb_ai": "v2_mb_ai.jpg", "zebD": "v2_zebD.jpg", "zeb8": "v2_zeb8.jpg", "zebW": "v2_zebW.jpg", "hdD": "v2_hdD.jpg", "upV": "v2_upV.mp4", "upP": "v2_upP.jpg", "s_orgs": "v2_s_orgs.jpg", "s_lists": "v2_s_lists.jpg", "s_acct": "v2_s_acct.jpg", "s_jobs": "v2_s_jobs.jpg", "zebQ": "v2_zebQ.jpg", "zebE": "v2_zebE.jpg", "hdM": "v2_hdM.jpg", "hdF": "v2_hdF.jpg", "sbV": "v2_sbV.mp4", "sbP": "v2_sbP.jpg"};
+const IMG={"crV": "v2_crV.mp4", "crP": "v2_crP.jpg", "up": "v2_up.jpg", "orgsT": "v2_orgsT.jpg", "payT": "v2_payT.jpg", "hdT": "v2_hdT.jpg", "mbT": "v2_mbT.jpg", "mb_shop": "v2_mb_shop.jpg", "mb_ai": "v2_mb_ai.jpg", "zebD": "v2_zebD.jpg", "zeb8": "v2_zeb8.jpg", "zebW": "v2_zebW.jpg", "hdD": "v2_hdD.jpg", "upV": "v2_upV.mp4", "upP": "v2_upP.jpg", "s_orgs": "v2_s_orgs.jpg", "s_lists": "v2_s_lists.jpg", "s_acct": "v2_s_acct.jpg", "s_jobs": "v2_s_jobs.jpg", "zebQ": "v2_zebQ.jpg", "zebE": "v2_zebE.jpg", "hdM": "v2_hdM.jpg", "hdF": "v2_hdF.jpg", "sbV": "v2_sbV.mp4", "sbP": "v2_sbP.jpg"};
 const C=[
  {id:"sumble",co:"sumble",dom:"ai account intelligence",yr:"2026 – present",cover:"orgsT",cls:"full",
   role:"founding product designer",focus:"product direction, research, information architecture, visual design, motion, front-end",tools:"figma, react, claude",
@@ -180,8 +180,8 @@ const C=[
     shots:[["s_lists","full","account lists, before and after"]]},
    {id:"job-posts",title:"teams and job posts",pm:["+25%","contacts saved from job posts",0],blurb:"a job post used to open as a banner layered over the list you came from. it's now a full page with a breadcrumb back through the organization and team, the key facts in one line under the title, context about the team, and suggested contacts in a table with room to read.",
     shots:[["s_jobs","full","job post detail, before and after"]]},
-   {id:"account",title:"account and usage",pm:["−30%","billing support tickets",0],blurb:"five account tabs became three. plan, renewal date and credit balance sit together in one card, with daily and monthly credits broken out, and buying credits is a button there, not a separate tab. below it, a ledger shows where every credit went.",
-    shots:[["s_acct","full","account and credit usage, before and after"]]},
+   {id:"account",title:"account and usage",pm:["−30%","billing support tickets",0],blurb:"five account tabs became three. plan and credit balance sit together in one card, buying credits is a button right there, and below it a ledger shows where every credit went. checkout happens in a side panel inside sumble instead of sending people off to stripe.",
+    shots:[["crV","video","settings, billing and export history, then buying credits","crP"]]},
    {id:"signals",title:"signals empty state and sidebar",pm:["+18%","upgrades started from the empty state",0],blurb:"a new account has no signals yet, so the empty state does the explaining. it says when the first ones will arrive, runs a moving row of example signals that are clearly labeled as examples, and offers the two upgrade paths. the sidebar collapses to icons to give dense pages more room. i designed it, wrote the code, and shipped it to production myself.",
     shots:[["sbV","video","signals empty state, with the sidebar collapsing","sbP"]]},
    {id:"upload",title:"upload flow",pm:["+38%","account lists created",0],blurb:"import used to be csv-only and buried in settings. now you can paste names or drop in any csv, then map your columns with a live preview of your own rows underneath. before anything is saved, you review every matched account, fix or remove the wrong ones, and search to add any that are missing. the whole flow moved out of settings and into onboarding.",
