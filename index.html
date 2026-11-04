@@ -126,6 +126,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .pm{display:block;margin-top:10px;color:var(--ink)}
 .pm b{font-weight:500}
 .pm em{font:400 10px var(--mono);letter-spacing:.07em;text-transform:uppercase;font-style:normal;color:var(--mute);border:1px dashed var(--mute);border-radius:5px;padding:1px 6px;margin-left:8px}
+.ba{position:relative;aspect-ratio:2400/1490;cursor:ew-resize;user-select:none;touch-action:pan-y}.ba img{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}.ba .top{clip-path:inset(0 0 0 var(--p))}.ba .bab{position:absolute;top:0;bottom:0;left:var(--p);width:2px;margin-left:-1px;background:var(--ink)}.ba .bak{position:absolute;top:50%;left:var(--p);width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;background:#fff;box-shadow:0 0 0 1px var(--edge),0 1px 4px rgba(0,0,0,.12)}.ba .bal{position:absolute;top:12px;background:rgba(255,255,255,.92);border-radius:5px;padding:3px 7px;box-shadow:0 0 0 1px var(--edge)}.ba .l{left:12px}.ba .r{right:12px}
 .shots .blurb{padding-top:14px;color:var(--mute);max-width:44em;text-wrap:pretty}
 .sech .ph{grid-column:span 2;justify-self:end;align-self:start;border:1px dashed var(--mute);border-radius:6px;padding:3px 8px}
 .secnav{display:flex;flex-direction:column;align-items:flex-start;gap:2px;margin-top:14px}
@@ -167,7 +168,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 <div class="take" id="take" aria-hidden="true"></div>
 
 <script>
-const IMG={"crV": "v2_crV.mp4", "crP": "v2_crP.jpg", "up": "v2_up.jpg", "orgsT": "v2_orgsT.jpg", "payT": "v2_payT.jpg", "hdT": "v2_hdT.jpg", "mbT": "v2_mbT.jpg", "mb_shop": "v2_mb_shop.jpg", "mb_ai": "v2_mb_ai.jpg", "zebD": "v2_zebD.jpg", "zeb8": "v2_zeb8.jpg", "zebW": "v2_zebW.jpg", "hdD": "v2_hdD.jpg", "upV": "v2_upV.mp4", "upP": "v2_upP.jpg", "s_orgs": "v2_s_orgs.jpg", "s_lists": "v2_s_lists.jpg", "s_acct": "v2_s_acct.jpg", "s_jobs": "v2_s_jobs.jpg", "zebQ": "v2_zebQ.jpg", "zebE": "v2_zebE.jpg", "hdM": "v2_hdM.jpg", "hdF": "v2_hdF.jpg", "sbV": "v2_sbV.mp4", "sbP": "v2_sbP.jpg"};
+const IMG={"admOld": "v2_admOld.jpg", "admNew": "v2_admNew.jpg", "admV": "v2_admV.mp4", "admP": "v2_admP.jpg", "crV": "v2_crV.mp4", "crP": "v2_crP.jpg", "up": "v2_up.jpg", "orgsT": "v2_orgsT.jpg", "payT": "v2_payT.jpg", "hdT": "v2_hdT.jpg", "mbT": "v2_mbT.jpg", "mb_shop": "v2_mb_shop.jpg", "mb_ai": "v2_mb_ai.jpg", "zebD": "v2_zebD.jpg", "zeb8": "v2_zeb8.jpg", "zebW": "v2_zebW.jpg", "hdD": "v2_hdD.jpg", "upV": "v2_upV.mp4", "upP": "v2_upP.jpg", "s_orgs": "v2_s_orgs.jpg", "s_lists": "v2_s_lists.jpg", "s_acct": "v2_s_acct.jpg", "s_jobs": "v2_s_jobs.jpg", "zebQ": "v2_zebQ.jpg", "zebE": "v2_zebE.jpg", "hdM": "v2_hdM.jpg", "hdF": "v2_hdF.jpg", "sbV": "v2_sbV.mp4", "sbP": "v2_sbP.jpg"};
 const C=[
  {id:"sumble",co:"sumble",dom:"ai account intelligence",yr:"2026 – present",cover:"orgsT",cls:"full",
   role:"founding product designer",focus:"product direction, research, information architecture, visual design, motion, front-end",tools:"figma, react, claude",
@@ -182,6 +183,8 @@ const C=[
     shots:[["s_jobs","full","job post detail, before and after"]]},
    {id:"account",title:"account and usage",pm:["−30%","billing support tickets",0],blurb:"five account tabs became three. plan and credit balance sit together in one card, buying credits is a button right there, and below it a ledger shows where every credit went. checkout happens in a side panel inside sumble instead of sending people off to stripe.",
     shots:[["crV","video","settings, billing and export history, then buying credits","crP"]]},
+   {id:"admin",title:"admin",blurb:"admin used to be three config tabs that showed how sumble was set up, but nothing about the team using it. i ran intensive research and user testing with admins across customer teams, and the same questions kept coming up: who has access, where are our credits going, what\u2019s connected, and is anyone actually using this. the new admin answers all of that on one dashboard, with dedicated tabs for users and credit caps, activity, configurations and integrations, so an admin can manage the whole account without filing a support ticket.",
+    shots:[["admOld","slider","before and after, drag to compare","admNew"],["admV","video","dashboard, users and credit caps, activity, configurations and integrations","admP"]]},
    {id:"signals",title:"signals empty state and sidebar",pm:["+18%","upgrades started from the empty state",0],blurb:"a new account has no signals yet, so the empty state does the explaining. it says when the first ones will arrive, runs a moving row of example signals that are clearly labeled as examples, and offers the two upgrade paths. the sidebar collapses to icons to give dense pages more room. i designed it, wrote the code, and shipped it to production myself.",
     shots:[["sbV","video","signals empty state, with the sidebar collapsing","sbP"]]},
    {id:"upload",title:"upload flow",pm:["+38%","account lists created",0],blurb:"import used to be csv-only and buried in settings. now you can paste names or drop in any csv, then map your columns with a live preview of your own rows underneath. before anything is saved, you review every matched account, fix or remove the wrong ones, and search to add any that are missing. the whole flow moved out of settings and into onboarding.",
@@ -290,7 +293,7 @@ function wireOne(E){
   E.querySelector('.vlink').addEventListener('click',e=>{if(!panel.hidden)e.preventDefault()});
 }
 const take=document.getElementById('take');
-const fig=([k,cls,cap,poster],blurb)=>`<figure>${cls==='video'?`<div class="plate"><video muted playsinline autoplay loop poster="${IMG[poster]}" src="${IMG[k]}"></video></div>`:plate(k,cls,cap)}${blurb?`<figcaption class="blurb">${blurb}</figcaption>`:`<figcaption class="mono">${cap}</figcaption>`}</figure>`;
+const fig=([k,cls,cap,poster],blurb)=>`<figure>${cls==='slider'?`<div class="plate ba" style="--p:50%"><img src="${IMG[k]}" alt="before"><img class="top" src="${IMG[poster]}" alt="after"><span class="bal l mono">before</span><span class="bal r mono">after</span><i class="bab"></i><i class="bak"></i></div>`:cls==='video'?`<div class="plate"><video muted playsinline autoplay loop poster="${IMG[poster]}" src="${IMG[k]}"></video></div>`:plate(k,cls,cap)}${blurb?`<figcaption class="blurb">${blurb}</figcaption>`:`<figcaption class="mono">${cap}</figcaption>`}</figure>`;
 let shown=null;
 function study(c){
   const O=ordered(), n=O[(O.indexOf(c)+1)%O.length];
@@ -306,7 +309,7 @@ function study(c){
   </div>`;
   document.getElementById('x').onclick=()=>{location.hash='work'};
   shown=c;
-  take.querySelectorAll('video').forEach(v=>{v.muted=true;v.play().catch(()=>{})});
+  take.querySelectorAll('video').forEach(v=>{v.muted=true;v.play().catch(()=>{})});take.querySelectorAll('.ba').forEach(b=>{let d=0;const set=e=>{const r=b.getBoundingClientRect();b.style.setProperty('--p',Math.max(0,Math.min(100,(e.clientX-r.left)/r.width*100))+'%')};b.addEventListener('pointerdown',e=>{d=1;b.setPointerCapture(e.pointerId);set(e)});b.addEventListener('pointermove',e=>{if(d)set(e)});b.addEventListener('pointerup',()=>d=0);b.addEventListener('pointercancel',()=>d=0)});
 }
 function toSection(sec,smooth){
   const el=sec&&document.getElementById('sec-'+sec);
