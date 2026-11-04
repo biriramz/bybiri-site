@@ -225,7 +225,7 @@ const plate=(k,cls,alt)=>`<div class="plate ${cls==='full'?'':cls}"><img src="${
 const duo=(k,m,alt)=>`<div class="duo"><img src="${IMG[k]}" alt="${alt}, desktop"><img class="mob" src="${IMG[m]}" alt="${alt}, mobile"></div>`;
 const VS={};
 T.filter(c=>c.video||c.adj).forEach(c=>{VS[c.id]={t:c.t0||0,z:1,x:0,y:0,loop:!!c.video};try{Object.assign(VS[c.id],JSON.parse(null||'{}'))}catch(e){}});
-const LDEF={left:["sumble","sumble.admin","zebra","sumble.signals"],right:["marble","sumble.upload","honeydew"]};
+const LDEF={left:["sumble","sumble.signals","honeydew"],right:["sumble.admin","zebra","sumble.upload","marble"]};
 let L=JSON.parse(JSON.stringify(LDEF)), arranging=false;
 try{const o=JSON.parse(null||'null'); if(o&&o.left&&o.right&&[...o.left,...o.right].sort().join()===T.map(c=>c.id).sort().join()) L=o}catch(e){}
 const ordered=()=>{const out=[];for(let i=0;i<Math.max(L.left.length,L.right.length);i++){if(L.left[i])out.push(L.left[i]);if(L.right[i])out.push(L.right[i])}const seen=[];out.forEach(id=>{const c=C.find(c=>c.id===id.split('.')[0]);if(!seen.includes(c))seen.push(c)});return seen};
