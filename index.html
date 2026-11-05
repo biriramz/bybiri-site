@@ -106,7 +106,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .intro{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);padding-block:20px 28px}
 .intro>div:first-child{grid-column:span 4}
 .intro h1{font:inherit;font-weight:500}
-.intro p{grid-column:span 8;text-wrap:pretty}
+.intro .ip{grid-column:span 8}.intro p{margin:0;text-wrap:pretty}.intro p+p{margin-top:14px}
 .facts{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--g);padding-block:14px clamp(32px,4vw,56px);border-top:1px solid var(--line)}
 .facts .nums{grid-column:span 4;display:flex;flex-wrap:wrap;gap:14px 32px}
 .facts .f{grid-column:span 2;min-width:0;overflow-wrap:anywhere}
@@ -135,7 +135,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset
 .next{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-block:clamp(40px,5vw,72px) 24px;padding-top:14px;border-top:1px solid var(--line)}
 .next b{font-weight:500}
 .next:hover b{color:var(--mute)}
-@media(max-width:860px){.sech h2{grid-column:1/-1}.intro>div:first-child,.intro p,.facts .nums{grid-column:1/-1}.facts .f{grid-column:span 6}.tbar{grid-template-columns:1fr auto}.tbar .mid{display:none}}
+@media(max-width:860px){.sech h2{grid-column:1/-1}.intro>div:first-child,.intro .ip,.facts .nums{grid-column:1/-1}.facts .f{grid-column:span 6}.tbar{grid-template-columns:1fr auto}.tbar .mid{display:none}}
 
 
 @media(max-width:860px){
@@ -173,7 +173,7 @@ const C=[
  {id:"sumble",co:"sumble",dom:"ai account intelligence",yr:"2026 – present",cover:"orgsT",cls:"full",
   role:"founding product designer",focus:"product direction, research, information architecture, visual design, motion, front-end",tools:"figma, react, claude",
   nums:[["1:1","figma → production react"],["2×","faster time to first insight"],["+38%","account lists created"]],
-  p:"sumble 2.0 was one bet: that sales and marketing teams would live in sumble every day if it felt like a workspace instead of a database. every project below serves that. when i joined sumble as its founding designer, organizations, people and job posts all lived on one page behind tabs, and customers kept telling us on calls that they couldn't get their own account lists in. i took those as the two things to fix first. i redesigned the product around dedicated pages, and rebuilt import after interviewing dozens of salespeople and revops teams. underneath both, i built the design system from scratch, with figma components mapped 1:1 to production react, so engineers build every new surface from the same parts. i work directly with the founders, engineering, data and customer success, own all product motion, and ship front-end code myself when that's faster. beyond my own work, i set the product direction for sumble 2.0 with the founders, run design reviews with engineering, and i'm now hiring sumble's next designer.",
+  p:"sumble 2.0 was one bet: that sales and marketing teams would live in sumble every day if it felt like a workspace instead of a database. every project below serves that.\n\nwhen i joined sumble as its founding designer, organizations, people and job posts all lived on one page behind tabs, and customers kept telling us on calls that they couldn't get their own account lists in. i took those as the two things to fix first. i redesigned the product around dedicated pages, and rebuilt import after interviewing dozens of salespeople and revops teams.\n\nunderneath both, i built the design system from scratch, with figma components mapped 1:1 to production react, so engineers build every new surface from the same parts. i work directly with the founders, engineering, data and customer success, own all product motion, and ship front-end code myself when that's faster.\n\nbeyond my own work, i set the product direction for sumble 2.0 with the founders, run design reviews with engineering, and i'm now hiring sumble's next designer.",
   sections:[
    {id:"organizations",title:"organizations",pm:["−40%","time to a filtered list",0],blurb:"search used to be one page with organizations, job posts and people stacked behind tabs. organizations now has its own page. filters show what's applied and how they combine, a sumble score ranks every row at a glance, and column settings like subsidiaries and sorting live on the column they affect. the hard call was retiring the tabbed search page everyone was used to. i pushed for dedicated pages because every customer call showed people losing their place switching tabs.",
     shots:[["s_orgs","full","organizations, before and after"]]},
@@ -305,7 +305,7 @@ function study(c){
   take.innerHTML=`<div class="tbar"><a href="#work">carla ramirez</a><div class="mid"><b>${c.co}</b> ${c.dom}</div><button class="x" id="x" type="button">close</button></div>
   <div class="hero ${c.cls==='full'?'flat':''}">${c.duo?duo(c.cover,c.duo,c.co+' '+c.dom):`<img src="${IMG[c.cover]}" alt="${c.co} ${c.dom}">`}</div>
   <div class="tin">
-    <div class="intro"><div><h1>${c.co}</h1><div class="mono">${c.dom}</div></div><p>${c.p}</p></div>
+    <div class="intro"><div><h1>${c.co}</h1><div class="mono">${c.dom}</div></div><div class="ip">${c.p.split("\n\n").map(x=>`<p>${x}</p>`).join("")}</div></div>
     <div class="facts"><div class="nums">${c.nums.map(([a,b])=>`<div><b>${a}</b><span>${b}</span></div>`).join('')}</div>
       ${[["role",c.role],["duration",c.yr],["focus",c.focus],["tools",c.tools]].filter(x=>x[1]).map(([k,v])=>`<div class="f"><div class="mono">${k}</div>${v}</div>`).join('')}</div>
     ${body}
