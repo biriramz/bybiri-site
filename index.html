@@ -221,7 +221,6 @@ const T=[
  {id:"sumble.upload",co:"upload flow",dom:"sumble",m:"",video:"upV",poster:"upP",dur:21.2,t0:5,ar:"2822 / 1634",old:"upload"},
  {id:"zebra",co:"the zebra",dom:"insurance comparison",m:"",cover:"zeb8",cls:"full"},
  {id:"marble",co:"marble",dom:"insurance management",m:"acquired by the zebra",cover:"mbT",cls:"full"},
- {id:"sumble.connectors",co:"connectors",dom:"sumble",m:"",cover:"cnA_mcp",cls:"full"},
  {id:"sumble.events",co:"events",dom:"sumble",m:"",cover:"evA1",cls:"full"},
  {id:"sumble.admin",co:"admin",dom:"sumble",m:"",video:"admV",poster:"admP",dur:22,t0:0,ar:"2560 / 1444"},
  {id:"sumble.signals",co:"signals",dom:"sumble",m:"",video:"sbV",poster:"sbP",dur:8.0,t0:1,ar:"2988 / 1634"},
@@ -232,7 +231,7 @@ const plate=(k,cls,alt)=>`<div class="plate ${cls==='full'?'':cls}"><img src="${
 const duo=(k,m,alt)=>`<div class="duo"><img src="${IMG[k]}" alt="${alt}, desktop"><img class="mob" src="${IMG[m]}" alt="${alt}, mobile"></div>`;
 const VS={};
 T.filter(c=>c.video||c.adj).forEach(c=>{VS[c.id]={t:c.t0||0,z:1,x:0,y:0,loop:!!c.video};try{Object.assign(VS[c.id],JSON.parse(null||'{}'))}catch(e){}});
-const LDEF={left:["sumble","sumble.signals","honeydew","sumble.events"],right:["sumble.admin","zebra","sumble.upload","marble","sumble.connectors"]};
+const LDEF={left:["sumble","sumble.signals","honeydew","sumble.events"],right:["sumble.admin","zebra","sumble.upload","marble"]};
 let L=JSON.parse(JSON.stringify(LDEF)), arranging=false;
 try{const o=JSON.parse(null||'null'); if(o&&o.left&&o.right&&[...o.left,...o.right].sort().join()===T.map(c=>c.id).sort().join()) L=o}catch(e){}
 const ordered=()=>{const out=[];for(let i=0;i<Math.max(L.left.length,L.right.length);i++){if(L.left[i])out.push(L.left[i]);if(L.right[i])out.push(L.right[i])}const seen=[];out.forEach(id=>{const c=C.find(c=>c.id===id.split('.')[0]);if(!seen.includes(c))seen.push(c)});return seen};
